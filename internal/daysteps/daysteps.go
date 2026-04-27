@@ -63,6 +63,7 @@ func DayActionInfo(data string, weight, height float64) string {
 	}
 
 	if steps <= 0 {
+		fmt.Println("Количество шагов должно быть больше 0")
 		return ""
 	}
 
@@ -70,6 +71,7 @@ func DayActionInfo(data string, weight, height float64) string {
 	distanceKm := distance / mInKm
 	calories, err := spentcalories.WalkingSpentCalories(steps, weight, height, duration)
 	if err != nil {
+		fmt.Println(err)
 		return ""
 	}
 
